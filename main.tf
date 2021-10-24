@@ -1,19 +1,3 @@
-/*
-Copyright 2019 The KubeOne Authors.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
 resource "hcloud_ssh_key" "kubeone" {
   name       = "kubeone-${var.cluster_name}"
   public_key = file(var.ssh_public_key_file)
@@ -32,13 +16,13 @@ resource "hcloud_network_subnet" "kubeone" {
 }
 
 resource "hcloud_server_network" "control_plane" {
-  count     = 3
+  count     = 1
   server_id = element(hcloud_server.control_plane.*.id, count.index)
   subnet_id = hcloud_network_subnet.kubeone.id
 }
 
 resource "hcloud_server" "control_plane" {
-  count       = 3
+  count       = 1
   name        = "${var.cluster_name}-control-plane-${count.index + 1}"
   server_type = var.control_plane_type
   image       = var.image
@@ -73,7 +57,7 @@ resource "hcloud_load_balancer" "load_balancer" {
 resource "hcloud_load_balancer_target" "load_balancer_target" {
   type             = "server"
   load_balancer_id = hcloud_load_balancer.load_balancer.id
-  count            = 3
+  count            = 1
   server_id        = element(hcloud_server.control_plane.*.id, count.index)
   use_private_ip   = true
   depends_on = [
