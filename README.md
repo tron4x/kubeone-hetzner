@@ -59,5 +59,5 @@ See the [Terraform loadbalancers in examples document][docs-tf-loadbalancer].
 - export ks config: 
   export KUBECONFIG=$PWD/k8s-config
   
-Now you are ready to work with your K8S Cluuster :-)
+Now you are ready to work with your K8S Cluster :-)
   
