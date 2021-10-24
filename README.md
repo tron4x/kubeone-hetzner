@@ -1,5 +1,16 @@
-## Kubeone Deployment
-https://docs.kubermatic.com/kubeone/v1.2/provisioning/
+# Hetzner Terraform configs & KubeOne Deployment
+
+The Hetzner Quickstart Terraform configs can be used to create the needed
+infrastructure for a Kubernetes HA cluster. Check out the following
+[Creating Infrastructure guide][docs-infrastructure] to learn more about how to
+use the configs and how to provision a Kubernetes cluster using KubeOne.
+
+## Kubernetes API Server Load Balancing
+
+See the [Terraform loadbalancers in examples document][docs-tf-loadbalancer].
+
+[docs-infrastructure]: https://docs.kubermatic.com/kubeone/master/infrastructure/terraform_configs/
+[docs-tf-loadbalancer]: https://docs.kubermatic.com/kubeone/master/advanced/example_loadbalancer/
 
 ## Inputs
 
@@ -25,3 +36,22 @@ https://docs.kubermatic.com/kubeone/v1.2/provisioning/
 | kubeone\_api | kube-apiserver LB endpoint |
 | kubeone\_hosts | Control plane endpoints to SSH to |
 | kubeone\_workers | Workers definitions, that will be transformed into MachineDeployment object |
+
+## Installation of Infrastructure Cluster
+
+
+- terraform init
+- terraform plan
+- terraform apply
+- terraform output -json > tf.json
+
+## Deploy K8S Cluster with KubeOne
+
+- export HCLOUD_TOKEN="<toke here>"  # For Hetzner Cloud
+  For other provider take a loo here: 
+  https://docs.kubermatic.com/kubeone/v1.3/tutorials/creating_clusters/
+
+- You need private ssh key now:
+  ssh-add ~/.ssh/id_rsa
+
+- kubeone apply -m kubeone.yaml -t tf.json
