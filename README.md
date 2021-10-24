@@ -55,3 +55,9 @@ See the [Terraform loadbalancers in examples document][docs-tf-loadbalancer].
   ssh-add ~/.ssh/id_rsa
 
 - kubeone apply -m kubeone.yaml -t tf.json
+  
+- export ks config
+  export KUBECONFIG=$PED/k8s-config
+  
+Now you are ready to work with your K8S Cluuster :-)
+  
