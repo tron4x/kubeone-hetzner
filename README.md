@@ -10,7 +10,7 @@
 
 - export HCLOUD_TOKEN="<toke here>"  # For Hetzner Cloud
   For other provider take a loo here: 
-  https://docs.kubermatic.com/kubeone/v1.3/tutorials/creating_clusters/
+  https://docs.kubermatic.com/kubeone/v1.3/tutorials/creating_clusters/#step-5--provisioning-the-cluster
 
 - You need private ssh key now:
   ssh-add ~/.ssh/id_rsa
