@@ -69,7 +69,8 @@ If you want to change the service type for ArgoCD, from Load balancer to NodePor
 ```
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 ```
-
+![alt text](https://github.com/tron4x/kubeone-hetzner/blob/main/jpg/Screenshot%202021-12-11%2000:02:34.png?raw=true)
+![alt text](https://github.com/tron4x/kubeone-hetzner/blob/main/jpg/Screenshot%202021-12-11%2000:06:10.png?raw=true)
   
 Now you are ready to work with your K8S Cluster :+1:
   
