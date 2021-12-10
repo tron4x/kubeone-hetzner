@@ -60,7 +60,8 @@ File is ingress-as-loadbalancer.yaml
 In this case the ip of then worker node is the endpoint.
 ## Prometheus & Grafana
 
-Both will be deployed over ArgoCD
+Both will be deployed over ArgoCD.
+![alt text](https://github.com/tron4x/kubeone-hetzner/blob/main/jpg/Screenshot%202021-12-10%2023:57:23.png?raw=true)
 
 All yaml files are in direcrory "monitoring"
 
