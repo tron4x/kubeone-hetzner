@@ -56,7 +56,7 @@ variable "worker_type" {
 }
 
 variable "workers_replicas" {
-  default = 2
+  default = 3
   type    = number
 }
 
@@ -85,4 +85,9 @@ variable "network_zone" {
   default     = "eu-central"
   description = "network zone to use for private network"
   type        = string
+}
+variable "public_ip_address" {
+  description = "server public address"
+  type        = list(string)
+  default     = ["","",.... < set ips here >]
 }

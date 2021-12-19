@@ -11,6 +11,12 @@ LoadBalancer and Cloud Volume ( pvc for Grafana ) are also created.
 
 My costs are between 15-20 euros per month ( As of today: November 2021 )
 
+### New Update 01/31/2022
+
+1. Added os update for ubuntu/debian main.tf and variables.
+
+   upgrade_os is an binary create with golang.
+   You can see the source here: [upgrade_os.go](https://github.com/tron4x/kubeone-hetzner/blob/main/upgrade_os.go)
 ## Requirements
 
 [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)

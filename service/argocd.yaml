@@ -2950,13 +2950,13 @@ metadata:
 spec:
   ports:
   - name: server
-    port: 8081
+    port: 443
     protocol: TCP
-    targetPort: 8081
+    targetPort: 443
   - name: metrics
-    port: 8084
+    port: 443
     protocol: TCP
-    targetPort: 8084
+    targetPort: 443
   selector:
     app.kubernetes.io/name: argocd-repo-server
 ---
