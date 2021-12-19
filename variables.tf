@@ -56,7 +56,7 @@ variable "worker_type" {
 }
 
 variable "workers_replicas" {
-  default = 2
+  default = 3
   type    = number
 }
 
@@ -71,7 +71,7 @@ variable "datacenter" {
 }
 
 variable "image" {
-  default = "ubuntu-20.04"
+  default = "ubuntu-22.04"
   type    = string
 }
 
@@ -84,5 +84,10 @@ variable "ip_range" {
 variable "network_zone" {
   default     = "eu-central"
   description = "network zone to use for private network"
+  type        = string
+}
+variable "public_ip_address" {
+  description = "server public address"
+  default     = "public_ips.txt"
   type        = string
 }
