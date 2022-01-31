@@ -1,4 +1,4 @@
-The code install an 1 control plane and 2 worker nodes, K8S cluster and one pool server for deployments.
+The code install an 2 control planes and 3 worker nodes, K8S cluster and one pool server for deployments.
 
 Also we install and configure ingress-nginx and metallb.
 
